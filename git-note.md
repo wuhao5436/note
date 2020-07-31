@@ -174,3 +174,11 @@ git config --global user.email john@163.com
     * 修改host 格式 `ip  域名`
         * 例如 `13.250.177.223  github.com`
 * [参考文档](http://www.mamicode.com/info-detail-2942782.html)
+
+# submodule
+* 含有submodule的项目如何拉取submodule的代码
+```
+ git submodule init
+ git submodule update
+
+```
