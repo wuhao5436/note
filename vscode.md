@@ -1,4 +1,4 @@
-# sinppets config
+# snippets config
 
 ```javascript
 {
