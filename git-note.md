@@ -193,7 +193,7 @@ git config --global user.email john@163.com
  git branch -r --format='%(refname:lstrip=3)' |grep -E 'cherry-' |xarg git push origin --delete
 ```
 
-* 删除 除了包含"develop" 和 "master" 的其他全部分支
+* 删除 包含"develop" 和 "master" 以外的其他全部分支
 
 ```git 
  git branch -r --format='%(refname:lstrip=3)'  |grep -v 'master\|develop' |xargs git push origin --delete
