@@ -184,3 +184,11 @@ git config --global user.email john@163.com
 ```
 # git 正则
 * https://www.jianshu.com/p/f39c42abbdaf
+
+* 一行代码删除所有cherry-pick分支
+
+```git
+ git branch -r --format='%(refname:lstrip=3)' |grep -E 'cherry-' |xarg git push origin --delete
+```
+
+
