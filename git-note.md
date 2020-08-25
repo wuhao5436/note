@@ -159,8 +159,7 @@ git config --global user.email john@163.com
     git branch -D branchName 
  
     git 删除远程分支
-    git branch -r -d origin/branchName
-    git push origin :branchName
+    git push origin --delete branchname
 
 ```
 
@@ -186,7 +185,10 @@ git config --global user.email john@163.com
 * https://www.jianshu.com/p/f39c42abbdaf
 
 * 一行代码删除所有cherry-pick分支
-
+  - 参考文档【1】 https://git-scm.com/docs/git-branch
+  - 参考文档【2】 https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-branch.html
+  - 参考文档【3】 https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-for-each-ref.html
+  
 ```git
  git branch -r --format='%(refname:lstrip=3)' |grep -E 'cherry-' |xarg git push origin --delete
 ```
