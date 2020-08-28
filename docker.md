@@ -11,6 +11,8 @@
 # 通用操作
 - docker restart 重启
 - docker ps 查看容器
+- docker stop CONTAINER_NAME 停止容器
+- docker rm CONTANINER_NAME 移除容器
 - docker exec -it hash /bin/xx 进入容器
 
 ### 启动一个Nginx
