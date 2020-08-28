@@ -8,6 +8,10 @@
 1. 设置 Daemon registry-mirrors 加快下载速度
 1. 基础教程 `https://www.runoob.com/docker/docker-install-nginx.html` 
 
+# 通用操作
+- docker restart 重启
+- docker ps 查看容器
+- docker exec -it hash /bin/xx 进入容器
 
 ### 启动一个Nginx
 1. `docker pull nginx:latest` 安装nginx 最新版本
