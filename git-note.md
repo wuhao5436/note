@@ -190,7 +190,7 @@ git config --global user.email john@163.com
   - 参考文档【3】 https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-for-each-ref.html
   
 ```git
- git branch -r --format='%(refname:lstrip=3)' |grep -E 'cherry-' |xarg git push origin --delete
+ git branch -r --format='%(refname:lstrip=3)' |grep -E 'cherry-' |xargs git push origin --delete
 ```
 
 * 删除 包含"develop" 和 "master" 以外的其他全部分支
