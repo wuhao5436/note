@@ -8,6 +8,13 @@
 1. 设置 Daemon registry-mirrors 加快下载速度
 1. 基础教程 `https://www.runoob.com/docker/docker-install-nginx.html` 
 
+# docker-compose 操作 
+- 在docker-compose.yml 目录下
+- docker stop 容器名，容器名为空 会停止docker-compose.yml所构建的容器
+- docker-compose ps 查看状态
+- docker-compose rm CONTAINER_NAME 
+- docker-compose up -d 重新构建
+
 # 通用操作
 - docker restart 重启
 - docker ps 查看容器
