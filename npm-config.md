@@ -7,3 +7,6 @@
 * 获取当前npm下载源 npm config get registry  
 * 修改当前npm源地址（例如切换到taobao源） npm config set registry https://registry.npm.taobao.org
 * npm ls react 可以查看项目中使用的react的版本
+
+### npm 查看包版本
+* npm view {packageName} version  例如 npm view umi version 
