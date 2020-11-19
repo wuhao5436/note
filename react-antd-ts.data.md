@@ -4,5 +4,5 @@ JSX.Element ≈ ReactElement ⊂ ReactNode
 
 ### 1. React 合成事件的接口
 import { ChangeEvent  } from 'React'
-例如input输入框 ChangeEvent<HTMLInputElement>
+例如input输入框 `ChangeEvent<HTMLInputElement>`
  
