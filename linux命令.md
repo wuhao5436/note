@@ -8,3 +8,7 @@
 - 解压文件 tar zxvf 文件名.tgz  -C /指定路径
 ### 文件上传
 - scp 文件名称 root@101.11.11.111:opt/anywhere/anywehwe
+
+
+### 目录
+- 查询当前目录 pwd
