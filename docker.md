@@ -18,6 +18,7 @@
 # 通用操作
 - docker restart 重启
 - docker ps 查看容器
+- docker inspect xxx(容器hash)，查看信息，关键的信息有一个ipAddress相当于在你本机启动了一个虚拟的网络。
 - docker stop CONTAINER_NAME 停止容器
 - docker rm CONTANINER_NAME 移除容器
 - docker exec -it hash /bin/xx 进入容器
@@ -39,3 +40,15 @@
 1. `docker commit -m 'some message' HASH AA:BB` AA 容器名称 BB tag名称
 1. `docker rm HASH` 移除容器
 1. `docker rmi HASH` 移除容器
+
+### docker helper
+
+- doker helper 是分三级的，可以在不同的命令后面加helper查看帮助
+
+  ```shell
+  docker --help
+  docker ps --help
+  docker contianer rm --help
+  ```
+
+  
