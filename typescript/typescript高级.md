@@ -2,9 +2,7 @@
 
 ## 关键字
 
-- infer
-
-
+- infer‘
 
 ## infer
 
