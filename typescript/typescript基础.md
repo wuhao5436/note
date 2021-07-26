@@ -4,6 +4,7 @@
 
 * interface（接口）
 * type 组合
+* `typeof`关键字
 
 ##  interface 和 type 的区别
 
@@ -67,5 +68,30 @@ const chineseBee: Animal = {
   weight: 0.001,
   size: 'small'
 }
+```
+
+## typeof
+
+### keyof 的作用
+
+Keyof写在一个type前面返回一个type
+
+```typescript
+type breakFristPrice = {
+    milk: 2,
+    bread: 1,
+    egg: 1.5,
+}
+// 返回 type breakFirstTypes = "milk"|"bread"|"egg"
+type breakFirstTypes =  keyof breakFristPrice;
+
+function custormerAskForBreakFirst (someThingToEat : breakFirstTypes) { return someThingToEat}
+
+custormerAskForBreakFirst('milk');
+custormerAskForBreakFirst('egg');
+custormerAskForBreakFirst('beaf'); // 报错
+custormerAskForBreakFirst(undefined);
+custormerAskForBreakFirst(null);
+
 ```
 
