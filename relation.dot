@@ -1,0 +1,34 @@
+// digraph g{
+//     node [color="blue", shape = "box", style = "filled", fillcolor = "green"]
+//     a [label = "中午吃什么"]
+//     b [label = "德克士"]
+//     c [label = "拉州牛肉拉面"]
+//     d [label = "拉屎"]
+//     a -> b
+//     a -> c
+//     b -> d
+//     c -> d
+// }
+
+
+digraph work {
+  node [shape="box"]
+  edge [color="blue"]
+
+  a [label="feature/neijuan-liu", ]
+  b [label="feature/neijuan-zhu"]
+  c [label="feature/neijuan-luo"]
+  together [label="feature/neijuan"]
+  master [lable="master",  color="red" , style = "filled",  fillcolor="yellow"]
+  //; a; b; c;
+  {
+    a ,b ,c [color="orange" , style = "filled",  fillcolor="green", rank="same" ]
+  }
+
+  master -> together
+  a -> together  [dir="both"]
+  b -> together [dir="both"]
+  c -> together [dir="both"]
+  together -> master [style="dashed",  label = "mergeRequest" ]
+}
+
