@@ -10,3 +10,11 @@
 
 ### npm 查看包版本
 * npm view {packageName} version  例如 npm view umi version 
+
+### .npmrc file
+```
+registry=http://registry.npm.taobao.org
+@gome:registry=http://npm.qiaoqiaokeji.cn
+@qiaoqiao:registry=http://maven.qiaoqiaokeji.cn/repository/npm-group
+```
+
