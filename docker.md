@@ -16,6 +16,9 @@ sudo vi  etc/docker/daemon.json编辑文件
   "registry-mirrors": [ "http://hub-mirror.c.163.com"] }
  }
 ```
+查看是否配置成功
+cmd 中 `docker info` 中查看 `Registry Mirrors` 配置
+
 
 # docker-compose 操作 
 - 在docker-compose.yml 目录下
