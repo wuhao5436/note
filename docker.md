@@ -20,6 +20,12 @@ sudo vi  etc/docker/daemon.json编辑文件
 cmd 中 `docker info` 中查看 `Registry Mirrors` 配置
 
 
+### docker ps
+
+- `docker ps -a`  查看全部的出容器
+- `docker stop HASH` 停止容器
+- `docker rm HASH` 移除容器
+
 # docker-compose 操作 
 - 在docker-compose.yml 目录下
 - docker stop 容器名，容器名为空 会停止docker-compose.yml所构建的容器
@@ -45,13 +51,10 @@ cmd 中 `docker info` 中查看 `Registry Mirrors` 配置
 1. 浏览 `localhost:8080` 可以看到nginx的页面
 
 ### 其他命令
-1. `docker ps` 查看全部的出容器
 1. 测试在nginx中浏览html `docker cp index.html HASH://usr/share/nginx/html`
 1. `docker images` 查看本地镜像
-1. `docker stop HASH` 停止容器
 1. `docker commit -m 'some message' HASH AA:BB` AA 容器名称 BB tag名称
-1. `docker rm HASH` 移除容器
-1. `docker rmi HASH` 移除容器
+
 
 ### docker helper
 
