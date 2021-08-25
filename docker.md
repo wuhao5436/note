@@ -8,6 +8,15 @@
 1. 设置 Daemon registry-mirrors 加快下载速度
 1. 基础教程 `https://www.runoob.com/docker/docker-install-nginx.html` 
 
+### docker 修改源
+在mac下可以点击控制docker设置，编辑json即可
+```
+sudo vi  etc/docker/daemon.json编辑文件
+ {
+  "registry-mirrors": [ "http://hub-mirror.c.163.com"] }
+ }
+```
+
 # docker-compose 操作 
 - 在docker-compose.yml 目录下
 - docker stop 容器名，容器名为空 会停止docker-compose.yml所构建的容器
