@@ -41,15 +41,6 @@ cmd 中 `docker info` 中查看 `Registry Mirrors` 配置
 - docker rm CONTANINER_NAME 移除容器
 - docker exec -it hash /bin/xx 进入容器
 
-### 启动一个Nginx
-1. `docker pull nginx:latest` 安装nginx 最新版本
-1. `docker images` 查看nginx 是否安装成功
-1. `docker run --name nginx-test -p 8080:80 -d nginx` 运行容器  
-  * `--name` 容器名称
-  * `-p` 映射地址:容器内的地址
-  * `-d` 设置容器在后台运行
-1. 浏览 `localhost:8080` 可以看到nginx的页面
-
 ### 其他命令
 1. 测试在nginx中浏览html `docker cp index.html HASH://usr/share/nginx/html`
 1. `docker images` 查看本地镜像
@@ -65,6 +56,18 @@ cmd 中 `docker info` 中查看 `Registry Mirrors` 配置
   docker ps --help
   docker contianer rm --help
   ```
-
+  
+## 应用
+ ### docker 安装 mysql
+ https://www.cnblogs.com/jiefu/p/12204555.html
+ 
+### docker 安装 nginx
+1. `docker pull nginx:latest` 安装nginx 最新版本
+1. `docker images` 查看nginx 是否安装成功
+1. `docker run --name nginx-test -p 8080:80 -d nginx` 运行容器  
+  * `--name` 容器名称
+  * `-p` 映射地址:容器内的地址
+  * `-d` 设置容器在后台运行
+1. 浏览 `localhost:8080` 可以看到nginx的页面
   
 
