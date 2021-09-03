@@ -288,47 +288,32 @@ const promise = new Promise((resolve, reject)=> {})
 function* hello() { 
  yield 'hello';
  yield 'world';
+ yield 1 + 2;
  return 'ending';
 }
 ```
+
 * Generator 函数调用后不执行，而是返回一个指向内部状态的指针对象，也就是Interator对象，必须调用next方法分段执行
-* `var hl = hello()` 
+* Generator.prototype.next 
+    * `var hl = hello()` 
     * hl.next 执行到第一个yield停止执行， 返回一个对象`{value:'hello', done: false}`
     * next 执行完毕的时候会返回这个对象`{value:undefined, done: true}`
-    * next 方法的参数表示上一个yield表达式返回的值
+    * **yield本身没有返回值总返回undefined, next 方法的参数会替换上一个yield表达式返回的值**（这个功能意义非凡，next方法可以在函数恢复执行的时候，注入额外的参数，改变函数的执行状态）
+    * 遇到yield函数执行会停下来，直到后面遇到下一个next调用才会执行后面的表达式，例如上面的 `1 + 2`，相当于是惰性求值
+    * yield表达式在其他表达式中时需要用()包裹
     * for...of 循环可以自动遍历Generator函数生成的Interator对象，不需要一直调用next方法
-* Generator.prototype.throw 方法，可以在函数体外抛出错误，函数体内接收错误。throw方法只能在Generator对象开始next后执行，且执行时会顺带执行一条next
-* 如果Generator对象内部的错误没有捕获，那么JS引擎将认为这个Generator已经运行结束了
-* Generator.prototype.return() 可以返回给定的值，并且中介Generator函数
-* 如果Generator函数内部有try...finally 代码块，那么return 将会推迟到finally中的代码执行完成再执行
-* 如果想在一个Generator函数中调用另一个Generator函数，那么需要使用到yield表达式, 如果不使用yield表达式，那么执行到那一个next的时候返回的是一个Iterator对象
-    ```
-    function* foo() {
-        yield 'a';
-        yield 'b';
-    }
-    function* bar() {
-        yield 'x';
-        yield* foo();
-        yield 'y';
-    }
-    // 上面的调用相当于
-    function* bar() {
-        yield 'x';
-        yield 'a';
-        yield 'b';
-        yield 'y';
-    }
-    ```
-    Generator作为对象的属性
-    ```
-    {
-        * aa() {}, // 等同于
-        aa: funciont* () {
-
-        }
-    }
-    ```
+* Generator.prototype.throw 
+    * 方法，可以在函数体外抛出错误，函数体内接收错误。throw方法只能在Generator对象开始next后执行，且执行时会顺带执行一条next
+    * 如果错误被generator函数内部捕获了，那么不影响下一个yield语句的执行
+    * 如果Generator对象内部的错误没有捕获，那么JS引擎将认为这个Generator已经运行结束了
+* Generator.prototype.return() 
+    * 可以返回给定的值，并且终结Generator函数
+    * 如果Generator函数内部有try...finally 代码块，那么return 将会推迟到finally中的代码执行完成再执行
+* 如果想在一个Generator函数中调用另一个Generator函数，那么需要使用到yield* 表达式
+* 协程
+    * 子例程只占用一个栈，而协程占用多个栈，协程相当于可以交换执行权的多个普通线程，多个普通线程可以有自己的上下文， 协程相当于用内存换取多任务并行
+    * generator 是半协程，只有generator的调用者才能将程序的执行权还给generator函数，如果是全协程，则任意的函数都可以让暂停的协程恢复执行
+    * 
 ## Generator 函数的异步应用
 * Thunk 函数，在JavaScript语言中Thunk函数替换的不是表达式，而是多参数函数，将其替换成一个只接受回调函数作为单参数的函数
 * Thunk 函数适合用于Generator函数自动执行
