@@ -313,11 +313,19 @@ function* hello() {
 * 协程
     * 子例程只占用一个栈，而协程占用多个栈，协程相当于可以交换执行权的多个普通线程，多个普通线程可以有自己的上下文， 协程相当于用内存换取多任务并行
     * generator 是半协程，只有generator的调用者才能将程序的执行权还给generator函数，如果是全协程，则任意的函数都可以让暂停的协程恢复执行
-    * 
 ## Generator 函数的异步应用
-* Thunk 函数，在JavaScript语言中Thunk函数替换的不是表达式，而是多参数函数，将其替换成一个只接受回调函数作为单参数的函数
-* Thunk 函数适合用于Generator函数自动执行
-* 工具库co用来适配Generator函数的自动执行
+### 有三个特性可以让 generator 函数可以作为异步操作的一个实现方案
+- 1. generator 可以暂停或恢复执行
+- 2. generator 的函数体内外的数据交换机制
+- 3. generator 函数的错误机制
+[`出错的代码与处理错误的代码，实现了时间和空间上的分离，这对于异步编程无疑是很重要的`](https://es6.ruanyifeng.com/#docs/generator-async)
+### 传值调用和传名调用
+* 多层函数的调用，先求职，然后再根据值进行下步一的调用，叫做传值调用，先计算所有的函数嵌套在一起的综合表达式，最后再传入原始值进行计算的方式叫做传名调用。
+* Thunk函数，就是传名调用中替换表达式的一种实现策略，把表达式替换成函数
+* **javascript是传名调用**javascipt中的Thunk的函数和上述Thunk函数的定义不同
+* 在JavaScript语言中Thunk函数替换的不是表达式，而是**多参数函数**，将其替换成一个只接受回调函数作为**单参数的函数**
+* Thunk 函数非常适合用于创建Generator函数自动执行函数
+* 工具库co用来适配Generator函数的自动执行。co函数要求yield 后面必须是promise 或者是 Thunk函数，原理也是generator的自动执行器。
 > async 函数
 * async 函数的就是Generator函数的语法糖
 * async 函数对Generator函数的改进提现在以下四点 
