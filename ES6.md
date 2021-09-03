@@ -326,7 +326,7 @@ function* hello() {
 * 在JavaScript语言中Thunk函数替换的不是表达式，而是**多参数函数**，将其替换成一个只接受回调函数作为**单参数的函数**
 * Thunk 函数非常适合用于创建Generator函数自动执行函数
 * 工具库co用来适配Generator函数的自动执行。co函数要求yield 后面必须是promise 或者是 Thunk函数，原理也是generator的自动执行器。
-> async 函数
+### async 函数
 * async 函数的就是Generator函数的语法糖
 * async 函数对Generator函数的改进提现在以下四点 
      * async 函数自带执行器，不需要next去求值
