@@ -199,6 +199,23 @@ git config --global user.email john@163.com
  git branch -r --format='%(refname:lstrip=3)'  |grep -v 'master\|develop' |xargs git push origin --delete
 ```
 
+## angular git 代码提交规范
+
+type是当前提交类型（必选），scope是当前提交涉及到的文件范围（可选），subject是当前提交的描述<type>(<scope>): <subject>
+ 
+ type | 说明
+ ---｜---
+ feat|新的功能
+ fixBug|的修复
+ docs|仅改变说明文档
+ style|代码格式的美化（formatting）
+ refactor|重构（没有feat和fix操作）
+ perf|性能优化
+ test|增加单元测试、修改当前单元测试
+ build|项目构建脚本或者外部依赖的改动（webpack、npm等）ciCI/CD相关文件、脚本的改动（Travis, Circle, BrowserStack, SauceLabs）
+ chore|出src/test以外的其他改动（比如根目录下各种rc文件的改动等）
+ revert|版本回退等
+
 
 
 
