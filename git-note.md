@@ -204,7 +204,7 @@ git config --global user.email john@163.com
 type是当前提交类型（必选），scope是当前提交涉及到的文件范围（可选），subject是当前提交的描述<type>(<scope>): <subject>
  
  type | 说明
- ---｜---
+ ---|---
  feat|新的功能
  fixBug|的修复
  docs|仅改变说明文档
