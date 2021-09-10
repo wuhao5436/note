@@ -433,6 +433,7 @@ A.prototype.__proto__ === Object.prototype // true
 
 * commonJS 使用 require 导入 使用 module.exports 导出,  输出的是一个拷贝对象，对象在代码执行的时候生成。
 * ES6  使用import 和 export 导入到处，输出的是一个引用import，export的值可以动态改变，commonjs输出的值是缓存不可以改变，静态资源在解析的过程中就可以输出。
+* export default的真实含义是，将export的对象赋值给default字段，import的时候可以将default字段修改为其他名称，这也是为什么export default 后面不能再跟赋值语句的原因
 * ES6 输出的是一个引用，如果输出的是对象，可以修改对象的属性，但是不能重新赋值，被引用的变量是只读的。
 * require 和 import 的区别： require是同步的，在引用的同时，被引用的代码就会执行，import是异步的，代码执行的时候才会到这一行，会去异步加载资源，这就是为什么会存在顶层await。import()当函数执行的时候会返回一个promise
 * import语句是 Singleton 模式, 多次import会合并成一个import执行
