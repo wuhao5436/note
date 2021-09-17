@@ -105,6 +105,8 @@ git config --global user.email john@163.com
         * git reset --hard <commit_id> 可以回到你想回到的某一个版本
         * git reset --hard HEAD^ 回到最新的一次提交
         * git reset HEAD^ 回到git add 钱
+    * 如果已经push过了，需要强制推送到远程xxxx分支 `git push -f -u origin xxxx`
+    * git reset 和 git reverse 的区别是 reset 是真的往后退，如果别人的电脑已经下载了你的代码，别人push的时候还会把错误重制回来，为了防止这种情况，就要邀请其他开发人员删除掉本地的分支，同步reset后的分支，reverse 只会对文件进行反向操作，git的版本是向前推的，所以不需要别人配合
 
 * git 远程操作
     * git remote -v 可以查看对应的远程仓库
