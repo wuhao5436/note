@@ -70,7 +70,7 @@ const chineseBee: Animal = {
 }
 ```
 
-## typeof
+## typeof(类型守卫)
 
 ### keyof 的作用
 
