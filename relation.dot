@@ -32,3 +32,6 @@ digraph work {
   together -> master [style="dashed",  label = "mergeRequest" ]
 }
 
+
+// 导出为图片
+// dot -Tpng -o 结构设计.png digraph.dot
