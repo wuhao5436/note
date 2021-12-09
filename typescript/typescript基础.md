@@ -10,7 +10,7 @@
 ## 范型
 * 范型是一种**抽象共性**的编程手段，他允许将类型作为其他类型的参数，从而起到“关注点分离”的作用。
 * 范型约束 
-```
+```typescript
 // 示例1 约束范型具有length属性
 interface LengthProps {
   length: number
