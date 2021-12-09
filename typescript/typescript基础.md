@@ -108,8 +108,8 @@ const chineseBee: Animal = {
 - instanceof 窄化. date instanceof Date
 - 组合类型推导 x = a ? 1 : '1'
 - 判别的联合窄化
-```
-例子1：
+```typescript
+// 例子1：
 interface Shape {
   type: 'circle' | 'square';
   length?: number;
@@ -123,7 +123,7 @@ funtion getArea (item: Shape) {
     ....
   }
 }
-例子2:
+// 例子2:
 interface CircleShape {
   type: 'circle';
   radius: number;
@@ -144,10 +144,6 @@ function getArea (item: Shape) {
     ....
   }
 }
-
-
-
-
 ```
 ### keyof 的作用
 
