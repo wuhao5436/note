@@ -9,8 +9,30 @@
 
 ## 范型
 * 范型是一种**抽象共性**的编程手段，他允许将类型作为其他类型的参数，从而起到“关注点分离”的作用。
+* 范型约束 
+```
+// 示例1 约束范型具有length属性
+interface LengthProps {
+  length: number
+}
+<T extends LengthProps> () { }
 
+// 示例2 解析对象
+function getProps<Type, Key extends keyof Type>(obj: Type, key: Key) {
+ return obj[key];
+}
+let x = {a: 1, b: '2'}
+getProps(x, 'a') = 1
+// getProps(x, 'm') ts 报错
 
+```
+* 示例化范型类型（将类作为参数）
+```
+function create<Type>(c: new (): Type): Type {
+  return new c();
+}
+// new (): Type 特殊描述
+```
 ##  interface 和 type 的区别
 
 ### 概念
