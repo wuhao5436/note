@@ -21,4 +21,9 @@ registry=http://registry.npm.taobao.org
 ### 创建软链代替npm link
 ```
 ln -s /Users/wuhaozhou/project/test/qiaoqiao-pc-lib/lib lib 
+创建软连接
+ln -s <源文件或目录> <目标文件或目录>
+举个栗子：
+当前路径创建link软链接引向 /root/pro/data.json
+ln –s /root/pro/data.json link
 ```
