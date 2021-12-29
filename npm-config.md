@@ -18,3 +18,7 @@ registry=http://registry.npm.taobao.org
 @qiaoqiao:registry=http://maven.qiaoqiaokeji.cn/repository/npm-group
 ```
 
+### 创建软链代替npm link
+```
+ln -s /Users/wuhaozhou/project/test/qiaoqiao-pc-lib/lib lib 
+```
