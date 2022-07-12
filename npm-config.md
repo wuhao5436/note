@@ -3,7 +3,7 @@
  * @Autor: 吴浩舟
  * @Date: 2021-12-09 16:01:17
  * @LastEditors: 吴浩舟
- * @LastEditTime: 2022-07-12 11:51:05
+ * @LastEditTime: 2022-07-12 11:52:21
 -->
 
 # npm 使用
@@ -29,6 +29,17 @@
 registry=http://registry.npm.taobao.org
 @gome:registry=http://npm.qiaoqiaokeji.cn
 @qiaoqiao:registry=http://maven.qiaoqiaokeji.cn/repository/npm-group
+```
+
+### 创建软链代替 npm link
+
+```
+ln -s /Users/wuhaozhou/project/test/qiaoqiao-pc-lib/lib lib
+创建软连接
+ln -s <源文件或目录> <目标文件或目录>
+举个栗子：
+当前路径创建link软链接引向 /root/pro/data.json
+ln –s /root/pro/data.json link
 ```
 
 # yarn 使用
