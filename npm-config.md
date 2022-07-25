@@ -3,7 +3,7 @@
  * @Autor: 吴浩舟
  * @Date: 2021-12-09 16:01:17
  * @LastEditors: 吴浩舟
- * @LastEditTime: 2022-07-12 11:52:21
+ * @LastEditTime: 2022-07-25 16:01:01
 -->
 
 # npm 使用
@@ -43,38 +43,3 @@ ln –s /root/pro/data.json link
 ```
 
 # yarn 使用
-
-## yarn work space
-
-### 切换 yarn 版本
-
-1. 需要更新[yarn](https://yarnpkg.com/getting-started/install)版本
-   如提示
-
-```
-error Missing workspace name.
-info Visit https://yarnpkg.com/en/docs/cli/workspace for documentation about this command.
-// or
-yarn workspaces list
-yarn workspaces v1.22.19
-error Invalid subcommand. Try "info, run"
-```
-
-需要输入 yarn 版本切换的命令
-
-```
-yarn set version berry
-```
-
-###
-
-```
- - packages
-    - app-ui
-    - app-lib
- - package.json
-```
-
-- 在外层使用`yarn` 可以直接帮里面的分包安装依赖
-
-- 使用`yarn workspace app-ui dev` 可以直接在外层执行分包里面的代码
