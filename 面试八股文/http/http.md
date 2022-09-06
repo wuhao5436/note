@@ -3,14 +3,14 @@
  * @Autor: 吴浩舟
  * @Date: 2022-09-03 16:16:58
  * @LastEditors: 吴浩舟
- * @LastEditTime: 2022-09-03 16:52:38
+ * @LastEditTime: 2022-09-06 09:22:23
 -->
 
 # http (HyperText Transfer Protocal) 
 
 ## 组成
 - 一条http 请求由请求行(request line)、请求头(header)、请求体组成(body)
-- 一条http 请求由相应行(status line)、响应头(header)、响应体组成(body)
+- 一条http 请求由响应行(status line)、响应头(header)、响应体组成(body)
 - 请求行包含：方法 + URL + http协议版本
 - 相应行包含：http协议版本 + 状态码 + 描述语句
 
@@ -40,3 +40,10 @@
  - 300 - 400 300表示资源在其他地方 304使用浏览器缓存 
  - 400 - 500 大于400表示异常且不是服务器的错误 401 未授权 403 forbiden 禁止访问 404 not found 资源不存在
  - 500 表示服务器异常
+
+
+## cookies
+普通的ajax(json)请求和jsop跨域请求是默认携带cookie的，而cors跨域请求和fetch请求默认是不携带cookie的。因此，当我们的请求需要携带cookie时，我们就要对cors跨域请求和fetch请求这两中请求方式进行特殊配置处理。
+```
+    fetch 请求中 option 配置 credentials: 'include',
+```
