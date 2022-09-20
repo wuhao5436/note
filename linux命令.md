@@ -1,3 +1,10 @@
+<!--
+ * @Description: 
+ * @Autor: 吴浩舟
+ * @Date: 2022-08-30 10:34:17
+ * @LastEditors: 吴浩舟
+ * @LastEditTime: 2022-09-11 17:08:28
+-->
 * 创建文件 touch a.log
 
 ### 文件压缩
@@ -12,3 +19,7 @@
 
 ### 目录
 - 查询当前目录 pwd
+
+
+### 筛选
+- `grep` 跟在 `|` 的后面，表示一种筛选，例如 ls | grep linux ; netstat | grep localhost
