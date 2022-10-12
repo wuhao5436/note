@@ -3,7 +3,7 @@
  * @Autor: 吴浩舟
  * @Date: 2022-09-03 16:16:58
  * @LastEditors: 吴浩舟
- * @LastEditTime: 2022-09-06 09:22:23
+ * @LastEditTime: 2022-10-12 22:01:01
 -->
 
 # http (HyperText Transfer Protocal) 
@@ -47,3 +47,10 @@
 ```
     fetch 请求中 option 配置 credentials: 'include',
 ```
+
+## http2 和 http1.1 的区别
+[文档](https://zhuanlan.zhihu.com/p/89471776)
+- 对http1.1 完全兼容
+- 二进制分帧
+- 多路复用/连接共享
+- 头部压缩
