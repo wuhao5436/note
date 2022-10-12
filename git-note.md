@@ -2,8 +2,8 @@
  * @Description: In User Settings Edit
  * @Author: luoshi
  * @Date: 2019-05-08 14:27:59
- * @LastEditTime: 2019-08-22 11:53:55
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-10-12 21:53:13
+ * @LastEditors: 吴浩舟
  -->
 
 # git 和 svn 的比较
@@ -58,6 +58,11 @@ git config --global user.email john@163.com
 * git commit 会启动默认文本编辑器
     * git config --global core.editor 可以指定编辑软件
     * git commit -a -m 'bug fix xxx' 在commit 加上-m可以省略git add 的操作，直接把跟踪的文件提交
+- git checkout 
+    - git checkout -b xxx 新建分支xxx
+    - git checkout -b feat202211 origin/feat202211  切换branch指定某个远程分支
+    
+
 * git 移除文件
     * rm 本地移除动作
     * 在git rm  本地工作区删除文件 + 缓存区删除文件，例如  git rm user.log 可以删除git对文件的跟踪
@@ -133,7 +138,6 @@ git config --global user.email john@163.com
         * 删除tag ，在本地操作的过程中创建出一个40位hash串命名的tag名称，所有想象删除操作如何，根据规律git tag -h ,查询到了很多命令，有一个-d类似见过，运行 git tag -d 0wsdfs44dfs... 删除掉了这个tag
         * 删除远程的tag git push origin :refs/tags/20190616
     * 检出一个tag， tag不能像branch一样来回切换，想要某个tag的拷贝还是要创建一个新分支
-    git checkout -b newpass v1.2.3
     * git 别名git别名的意思就是可以给比较长的命令写配置一个简写，这样操作起来更加方便
         ```
         git config --global alias.co checkout // 运行git co = 运行 git checkout
