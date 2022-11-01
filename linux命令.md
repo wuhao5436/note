@@ -23,3 +23,10 @@
 
 ### 筛选
 - `grep` 跟在 `|` 的后面，表示一种筛选，例如 ls | grep linux ; netstat | grep localhost
+
+### 查看端口占用情况
+- lsof -i:端口号 （list open file 是一个列出当前系统打开文件的工具。）
+- netstat -tunlp | grep 端口号
+
+### 杀死进程
+- kill 95533
